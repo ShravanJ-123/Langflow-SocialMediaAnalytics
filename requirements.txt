@@ -4,3 +4,4 @@ requests
 frontend 
 pandas
 plotly
+gunicorn
