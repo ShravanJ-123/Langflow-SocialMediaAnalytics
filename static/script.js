@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
         chatContainer.scrollTop = chatContainer.scrollHeight;
 
         // Send request to Flask API
-        fetch("http://127.0.0.1:5000/api/message", {
+        fetch("https://langflow-socialmediaanalytics.onrender.com/api/message", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ message: message, account: selectedAccount })
