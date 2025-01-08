@@ -1,0 +1,338 @@
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #3a6186, #89253e);
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  animation: slideIn 1s ease-in-out;
+}
+
+h1 {
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  animation: textGlow 1.5s infinite ease-in-out;
+}
+
+/* Dropdown */
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: 2px solid #3a6186;
+  border-radius: 5px;
+  background: white;
+  transition: box-shadow 0.3s ease-in-out;
+  text-align: center;
+}
+
+select:focus {
+  outline: none;
+  box-shadow: 0px 0px 10px rgba(58, 97, 134, 0.5);
+}
+
+/* Instagram Embed */
+#instagram-embed {
+  margin: 20px 0;
+  padding: 10px;
+  background: rgba(245, 245, 245, 0.9);
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  transition: transform 0.5s ease-in-out;
+}
+
+#instagram-embed:hover {
+  transform: scale(1.05);
+}
+
+/* Quick Glance */
+#quick-glance {
+  margin: 20px 0;
+}
+
+button {
+  background: linear-gradient(135deg, #3a6186, #89253e);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out, transform 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #89253e, #3a6186);
+  transform: scale(1.1);
+}
+
+
+#containersm {
+  display: flex;
+  justify-content: space-between; /* Optional: to space them out evenly */
+  gap: 20px; /* Optional: to add space between the elements */
+  margin-top: 30px;
+}
+
+/* Analysis Results */
+#analysis-results {
+  max-width: 40%;
+  flex: 1; /* This allows it to take up available space */
+  padding: 15px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Chatbox Container */
+#chat-container {
+  flex: 1; /* This allows it to take up available space */
+  margin-top: 0; /* Adjust margin if needed */
+}
+/* Chat Section */
+#chat {
+  background: rgba(250, 250, 250, 0.9);
+  padding: 10px;
+  height: 400px;
+  overflow-y: auto;
+  border-radius: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+/* Individual Message Containers */
+#chat .message-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+#chat .user {
+  justify-content: flex-end; /* Align user messages to the right */
+}
+
+#chat .bot {
+  justify-content: flex-start; /* Align bot messages to the left */
+}
+
+/* Avatar Styling */
+#chat .avatar {
+  width: 40px;
+  height: 40px;
+  background: #3a6186;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Message Content Styling */
+#chat .message-content {
+  max-width: 70%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+#chat .user .message-content {
+  background: #007bff;
+  color: white;
+  text-align: left;
+}
+
+#chat .bot .message-content {
+  background: #e0e0e0;
+  color: #333;
+  text-align: left;
+}
+
+/* Extra for Paragraphs (if used) */
+#chat p {
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.user-message {
+  background: #3a6186;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  display: inline-block;
+  max-width: 80%;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+.response {
+  background: #e0e0e0;
+  padding: 8px;
+  border-radius: 5px;
+  display: inline-block;
+  max-width: 80%;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+/* Input and Button */
+#messageInput {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #3a6186;
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+#messageInput:focus {
+  outline: none;
+  box-shadow: 0px 0px 10px rgba(58, 97, 134, 0.5);
+}
+
+#sendButton {
+  width: 20%;
+  background: #3a6186;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+}
+
+#sendButton:hover {
+  background: #89253e;
+}
+
+/* Loading Spinner */
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #3a6186;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+/* Wrapper container to center the #graph div */
+.wrapper {
+  display: flex;
+  justify-content: center; /* Horizontally center the #graph div */
+  align-items: center;     /* Vertically center the #graph div */
+  height: 80vh;            /* Take up 70% of the viewport height */
+}
+
+#graph {
+  align-items: stretch;
+  width: 1135px;
+  display: flex;
+  justify-content: space-between; /* Space items inside the div */
+  gap: 20px; /* Reduce gap to minimize unnecessary spacing */
+}
+
+/* Styling for the first graph container */
+#graph1 {
+  width: 50%;
+  padding: 15px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  animation: fadeIn 1s ease-in-out;
+  position: relative;
+  overflow: hidden; /* Prevents SVG from overflowing */
+}
+
+svg {
+  width: 100%; /* Ensure it resizes properly */
+  height: auto;
+  display: block;
+}
+
+
+/* Styling for the second graph container */
+#graph2 {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: flex-start; /* Keep items aligned to the top */
+  align-items: center;
+  width: 50%;
+  background: rgba(250, 250, 250, 0.9);
+  height: 450px; /* Adjust height as needed */
+  /* overflow-y: auto; Enables scrolling if content overflows */
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 15px;
+}
+
+.line {
+  fill: none;
+  stroke-width: 2;
+  stroke: steelblue;
+}
+
+.line-hover {
+  fill: none;
+  stroke-width: 3;
+  stroke: orange;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideIn {
+  0% { transform: translateY(10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes textGlow {
+  0%, 100% { text-shadow: 0 0 1px #b6b6b6, 0 0 5px #3a6186; }
+  50% { text-shadow: 0 0 11px #89253e, 0 0 20px #3a6186; }
+}
