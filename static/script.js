@@ -24,8 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
         messageInput.value = ""; // Clear input field
     
         // Reset graphs by removing their content
-        d3.select("#engagementGraph").selectAll("*").remove();  // Reset Engagement Trends graph
-        d3.select("#donutChart").selectAll("*").remove();       // Reset Post Type-Wise Engagement chart
+        d3.select("#engagementGraph").selectAll("*").remove();  
+        d3.select("#donutChart").selectAll("*").remove();       
     }
 
     // Function to embed Instagram profile dynamically
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
         selectedAccount = accountsDropdown.value;
         resetChatAndAnalysis();
         updateInstagramEmbed();
-        quickGlanceContainer.style.display = "block";  // Show quick glance
+        quickGlanceContainer.style.display = "block";  
     });
 
     analyzeBtn.addEventListener("click", () => {
@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Add avatar
         const avatar = document.createElement("div");
         avatar.classList.add("avatar");
-        avatar.textContent = messageType === "user-message" ? "🧑" : "🤖"; // Use emojis or replace with images
+        avatar.textContent = messageType === "user-message" ? "🧑" : "🤖"; 
     
         // Add message content
         const messageContent = document.createElement("div");
@@ -216,21 +216,21 @@ function loadData(fileName) {
                 console.error("Error parsing timestamp:", fixedTimestamp);
             }
 
-            d.likesCount = +d.likesCount || 0;  // Convert likesCount safely
-            d.commentsCount = +d.commentsCount || 0;  // Safely parse commentsCount
-            d.reach = +d.reach || 0;  // Safely parse reach
+            d.likesCount = +d.likesCount || 0;  
+            d.commentsCount = +d.commentsCount || 0;  
+            d.reach = +d.reach || 0; 
             d.engagementRate = d.reach > 0 ? ((d.likesCount + d.commentsCount) / d.reach) * 100 : 0;
             d.date = d3.timeFormat("%Y-%m-%d")(d.timestamp);
         });
 
-        // 📊 Prepare Data for Graph1 (Engagement Trends)
+        // Prepare Data for Graph1 (Engagement Trends)
         const groupedData = d3.group(data, d => d.date);
         const aggregatedData = Array.from(groupedData, ([key, values]) => ({
             key: new Date(key),
             value: d3.sum(values, d => d.likesCount)
         }));
 
-        // 📊 Prepare Data for Graph2 (Post Type-Wise Engagement)
+        // Prepare Data for Graph2 (Post Type-Wise Engagement)
         const postTypeEngagement = d3.rollup(data, 
             v => d3.sum(v, d => d.likesCount), 
             d => d.type
@@ -249,7 +249,7 @@ function loadData(fileName) {
 
 function setupGraph(data) {
     const margin = { top: 20, right: 30, bottom: 40, left: 50 };
-    const containerWidth = document.getElementById('graph1').clientWidth; // Get container width
+    const containerWidth = document.getElementById('graph1').clientWidth;
     const width = containerWidth - margin.left - margin.right;
     const height = 400 - margin.top - margin.bottom;
 
@@ -284,7 +284,7 @@ function setupGraph(data) {
     svg.append("g")
         .call(d3.axisLeft(y));
 
-    // **Animate the line drawing**
+    // Animate the line drawing
     const path = svg.append("path")
         .datum(data)
         .attr("class", "line")
@@ -303,7 +303,7 @@ function setupGraph(data) {
         .ease(d3.easeLinear)
         .attr("stroke-dashoffset", 0); // Draw the line smoothly
 
-    // **Create tooltip div**
+    // Create tooltip div
     const tooltip = d3.select("body").append("div")
         .attr("id", "tooltip")
         .style("position", "absolute")
@@ -315,27 +315,27 @@ function setupGraph(data) {
         .style("opacity", 0)
         .style("font-size", "14px");
 
-    // **Animate the data points appearing one by one with hover tooltip**
+    // Animate the data points appearing one by one with hover tooltip
     svg.selectAll("circle")
         .data(data)
         .enter().append("circle")
         .attr("class", "dot")
         .attr("cx", d => x(d.key))
         .attr("cy", d => y(d.value))
-        .attr("r", 0) // Start with radius 0
+        .attr("r", 0) 
         .transition()
-        .delay((d, i) => i * 200) // Delay each point slightly
+        .delay((d, i) => i * 200) 
         .duration(500)
-        .attr("r", 5) // Grow the circles to radius 5
+        .attr("r", 5) 
         .on("end", function () {
-            // **Add hover functionality after animation completes**
+            // Add hover functionality after animation completes
             d3.select(this)
                 .on("mouseover", function (event, d) {
                     tooltip.style("opacity", 1)
                         .html(`📅 <b>${d3.timeFormat("%d-%m-%Y")(d.key)}</b><br>❤️ <b>${d.value} Likes</b>`)
                         .style("left", `${event.pageX + 10}px`)
                         .style("top", `${event.pageY - 30}px`);
-                    d3.select(this).transition().duration(200).attr("r", 8); // Enlarge on hover
+                    d3.select(this).transition().duration(200).attr("r", 8); 
                 })
                 .on("mousemove", function (event) {
                     tooltip.style("left", `${event.pageX + 10}px`)
@@ -343,7 +343,7 @@ function setupGraph(data) {
                 })
                 .on("mouseout", function () {
                     tooltip.style("opacity", 0);
-                    d3.select(this).transition().duration(200).attr("r", 5); // Restore size
+                    d3.select(this).transition().duration(200).attr("r", 5); 
                 });
         });
 }
