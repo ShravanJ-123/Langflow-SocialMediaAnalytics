@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask import Flask, render_template
 import requests
+import os
 
 app = Flask(__name__)
 CORS(app)  # Allow frontend to call API
@@ -12,13 +13,13 @@ account_config = {
         "BASE_API_URL": "https://api.langflow.astra.datastax.com",
         "LANGFLOW_ID": "50f59f86-16d5-46db-abe2-c0995d97f2b0",
         "FLOW_ID": "3030aad7-cea9-4049-956c-bc5c7486ad0a",
-        "APPLICATION_TOKEN": "AstraCS:SRXKFZitkhPUFKhLtoykYmyB:b3185db2fea38fab1584e0b06cf83490e9b365c2957f31ca282fd1968e90d601"
+        "APPLICATION_TOKEN": os.getenv('TOKEN1')
     },
     "hitesh": {
         "BASE_API_URL": "https://api.langflow.astra.datastax.com",
         "LANGFLOW_ID": "50f59f86-16d5-46db-abe2-c0995d97f2b0",
         "FLOW_ID": "ed7e98d8-933c-4cf8-811b-86d56ddaf262",
-        "APPLICATION_TOKEN": "AstraCS:ppHvaStFuxgPZhsLUWRZNHry:6a81d0c669db82e53f4f8333b2f7a32efcc90fb124ea52e3e4e1d5db6edacfbf"
+        "APPLICATION_TOKEN": os.getenv('TOKEN2')
     }
 }
 
