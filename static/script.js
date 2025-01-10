@@ -160,7 +160,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Add message content
         const messageContent = document.createElement("div");
         messageContent.classList.add("message-content");
-        messageContent.textContent = message;
+        messageContent.innerHTML = marked.parse(message);
+
     
         // Assemble the message container
         if (messageType === "user-message") {
