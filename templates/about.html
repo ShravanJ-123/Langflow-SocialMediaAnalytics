@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <style>
+        h2 {
+            color: #444;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 5px;
+        }
+        
+        p {
+            margin: 10px 0 20px;
+            font-size: 1.1em;
+            color: #555;
+        }
+        
+        .custom-list {
+            list-style-type: none; /* Removes bullet points */
+            margin: 0;
+            padding: 0;
+        
+            display: flex;
+            flex-direction: row; /* Aligns items in a horizontal row */
+            align-items: flex-start; /* Aligns items to the top */
+            justify-content: flex-start; /* Aligns items to the left */
+            gap: 50px;
+        }
+        
+        .custom-list li {
+            font-size: 1.1em;
+            padding: 5px 0;
+            text-align: left; /* Ensures left alignment */
+        }
+        /* Media query for smaller screens */
+@media (max-width: 768px) {
+    .custom-list {
+        flex-direction: column; /* Stacks items vertically */
+        gap: 20px; /* Adjusts the gap for smaller screens */
+    }
+}
+
+    </style>
+ 
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+        <section>
+            <h2>📌 Overview</h2>
+            <p>
+                This project analyzes social media engagement trends using Langflow and DataStax Astra DB, providing AI-powered insights to optimize content strategy. 
+                It helps content creators and brands make data-driven decisions by comparing the performance of Reels, Carousels, and Static Images.
+            </p>
+        </section>
+    
+        <section>
+            <h2>⚡ Features</h2>
+            <ul class="custom-list">
+                <li>✅ <b>Engagement Analysis –</b> Tracks likes, shares, and comments across different post types.</li>
+                <li>✅ <b>AI-Generated Insights – </b>GPT provides data-driven recommendations for content strategy.</li>
+                <li>✅ <b>Scalable Database –</b> Uses DataStax Astra DB for fast and reliable data storage.</li>
+                <li>✅ <b>Workflow Automation –</b> Langflow processes and visualizes engagement trends effortlessly.</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
