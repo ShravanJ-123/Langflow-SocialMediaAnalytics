@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateInstagramEmbed() {
         if (selectedAccount && accountLinks[selectedAccount]) {
             instagramEmbedContainer.innerHTML = `
-                <iframe src="${accountLinks[selectedAccount]}embed/" width="820" height="350" frameborder="0" scrolling="yes"></iframe>
+                <iframe src="${accountLinks[selectedAccount]}embed/" width="100%" height="350" frameborder="0" scrolling="yes"></iframe>
             `;
         } else {
             instagramEmbedContainer.innerHTML = `<p>Select an account to see the profile.</p>`;
