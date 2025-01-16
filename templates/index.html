@@ -11,6 +11,14 @@
 
 </head>
 <body>
+        <!-- Navbar -->
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </nav>
 
     <div class="container">
         <h1>Instagram Performance Analysis</h1>
@@ -64,7 +72,7 @@
         </div>
     </div>
 </div>
-    
+
     <script src="static/script.js"></script>
 </body>
 </html>
